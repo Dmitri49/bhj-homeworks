@@ -15,5 +15,6 @@ for (let i = 0; i < modalCloseArray.length; i++) {
 };
 
 showSuccess.onclick = function() {
+    modalMain.classList.remove('modal_active');
     modalSuccess.classList.add('modal_active');
 }
