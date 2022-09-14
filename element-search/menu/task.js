@@ -1,6 +1,4 @@
-let menuLink = document.querySelectorAll('.menu__link');
-
-let check = 0;
+const menuLink = document.querySelectorAll('.menu__link');
 
 for (let i = 0; i < menuLink.length; i++) {
     menuLink[i].onclick = function() {
@@ -8,7 +6,7 @@ for (let i = 0; i < menuLink.length; i++) {
         console.log(subMenu);
         if (subMenu != null) {
             subMenu.classList.toggle('menu_active')
-            return false;
         }
+        return false;
     }
 }
