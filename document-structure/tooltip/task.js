@@ -5,10 +5,7 @@ Array.from(linkElements).forEach((element) => {
   element.addEventListener('click', (e) => {
     e.preventDefault();
 
-    if (
-      tooltip.classList.contains('tooltip_active') &&
-      tooltip.textContent === element.title
-    ) {
+    if (tooltip.classList.contains('tooltip_active') && tooltip.textContent === element.title) {
       tooltip.classList.toggle('tooltip_active');
       return;
     }

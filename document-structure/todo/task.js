@@ -8,7 +8,9 @@ form.addEventListener('submit', (e) => {
   const input = document.querySelector('.tasks__input');
   const userTask = input.value.trim();
 
-  if (userTask.length === 0) return;
+  if (userTask.length === 0) {
+    return;
+  } 
 
   const task = `<div class="task">
                     <div class="task__title">
@@ -20,12 +22,12 @@ form.addEventListener('submit', (e) => {
   tasksList.insertAdjacentHTML('beforeEnd', task);
   input.value = '';
 
-  const removeButtons = document.querySelectorAll('.task__remove');
-
-  Array.from(removeButtons).forEach((elem) => {
-    elem.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.target.closest('.task').remove();
-    });
-  });
+  tasksList.addEventListener(`click`, removeTask);
 });
+
+let removeTask = function(event) {
+    if (event.target.classList.contains("task__remove")){
+        let toRemove = event.target.closest(".task");
+        toRemove.remove();
+    } 
+}
